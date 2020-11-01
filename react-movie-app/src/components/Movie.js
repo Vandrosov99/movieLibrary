@@ -11,7 +11,6 @@ export default class Movie extends Component {
     const updatedFimls = this.props.movies.filter(movies => {
       return this.props.movie.id !== movies.id;
     });
-    console.log(updatedFimls);
     this.props.removeFilm(updatedFimls);
   };
   addToWatch = movie => {
@@ -20,17 +19,27 @@ export default class Movie extends Component {
         willWatch: true,
       });
       const savedWillWatch = JSON.parse(localStorage.getItem("movies"));
-      console.log(savedWillWatch);
       if (savedWillWatch) {
         savedWillWatch.push(movie);
         localStorage.setItem("movies", JSON.stringify(savedWillWatch));
         this.props.addToWatch(movie);
-      } else {
-        const emptyArr = [];
-        localStorage.setItem("movies", JSON.stringify(emptyArr));
       }
     }
   };
+  componentDidMount() {
+    console.log("compDidMount Movie");
+    this.checkFavouriteMovie();
+  }
+  checkFavouriteMovie() {
+    const localStorageMovies = JSON.parse(localStorage.getItem("movies"));
+    localStorageMovies.forEach(item => {
+      if (item.id === this.props.movie.id) {
+        this.setState({
+          willWatch: true,
+        });
+      }
+    });
+  }
   render() {
     const { movie } = this.props;
     return (

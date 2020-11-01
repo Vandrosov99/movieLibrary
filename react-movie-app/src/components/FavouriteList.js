@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FavouriteMovie from "./FavouriteMovie";
-export default class Favourite extends Component {
+export default class FavouriteList extends Component {
   render() {
     return (
       <div>
