@@ -12,4 +12,5 @@ export const moviesData = [
     title: "Hereditary",
   },
 ];
-//SOME TEST COMMENTARY
+//SOME TEST COMMENTARY 
+// v.2.0
