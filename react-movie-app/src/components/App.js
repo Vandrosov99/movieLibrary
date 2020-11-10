@@ -30,6 +30,7 @@ class App extends React.Component {
     this.setState({
       willWatch: updateFavMovie,
     });
+    console.log("update");
   };
   updateSort = value => {
     this.setState({
@@ -67,6 +68,7 @@ class App extends React.Component {
   };
   componentWillMount() {
     const savedWillWatch = JSON.parse(localStorage.getItem("movies"));
+    console.log(savedWillWatch);
     if (savedWillWatch) {
       this.setState({
         willWatch: savedWillWatch,
@@ -76,17 +78,13 @@ class App extends React.Component {
       localStorage.setItem("movies", JSON.stringify(emptyArr));
     }
   }
-  componentWillMount() {
-    console.log("will mount");
-  }
+
   componentDidMount() {
     this.getMovies();
-    console.log("did mount");
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.sortBy !== this.state.sortBy) {
       this.getMovies();
-      console.log("did update");
     }
     if (prevState.page !== this.state.page) {
       console.log("in production");
@@ -107,6 +105,7 @@ class App extends React.Component {
           movies={this.state.movies}
           removeFilm={this.handleClickRemoveMovie}
           addToWatch={this.handleClickAddToWatch}
+          count={this.state.willWatch.length}
         />
         <Pagination
           updatePage={this.updatePage}

@@ -3,7 +3,8 @@ import Movie from "./Movie";
 
 class MovieList extends Component {
   render() {
-    const { movies, removeFilm, addToWatch } = this.props;
+    const { movies, removeFilm, addToWatch, count } = this.props;
+    console.log("MOVIELIST");
     return (
       <div>
         {movies.map(movie => {
@@ -14,6 +15,7 @@ class MovieList extends Component {
               removeFilm={removeFilm}
               movies={movies}
               addToWatch={addToWatch}
+              count={count}
             />
           );
         })}

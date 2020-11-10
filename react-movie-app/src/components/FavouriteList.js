@@ -7,7 +7,7 @@ export default class FavouriteList extends Component {
         <h1>Will Watch : {this.props.count}</h1>
         <div>START</div>
         <ul>
-          {this.props.moviesWill.map((item, index) => {
+          {this.props.willWatch.map((item, index) => {
             return (
               <FavouriteMovie
                 key={index}
