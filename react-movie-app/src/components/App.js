@@ -1,11 +1,12 @@
 import React from "react";
-// import { moviesData } from "../const/movieData";
 import MovieList from "./MovieList";
 import FavouriteList from "./FavouriteList";
 import SortingTab from "./SortingTab";
 import { API_URL, API_KEY } from "../utils/api";
 import Pagination from "./Pagination";
 import Header from "./Header/Header";
+
+import "./App.css";
 class App extends React.Component {
   constructor() {
     super();
@@ -93,7 +94,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className='wrapper'>
         <Header searchFilm={this.searchFilm} />
         <FavouriteList
           willWatch={this.state.willWatch}

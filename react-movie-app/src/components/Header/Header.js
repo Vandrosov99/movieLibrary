@@ -1,10 +1,12 @@
 import React from "react";
-import SearchForm from "../SearchForm";
-
+import SearchForm from "../SearchForm/SearchForm";
+import Logo from "../Logo/Logo";
+import "./Header.css";
 const Header = props => {
   const { searchFilm } = props;
   return (
-    <div>
+    <div className='header-container'>
+      <Logo />
       <SearchForm searchFilm={searchFilm} />
     </div>
   );

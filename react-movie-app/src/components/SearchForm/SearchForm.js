@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./SearchForm.css";
 export default class SearchForm extends Component {
   constructor() {
     super();
@@ -21,11 +21,10 @@ export default class SearchForm extends Component {
       this.props.searchFilm(searchFilm);
     }
     this.state.query = "";
-    console.log(e.target.parentChildren);
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmitForm}>
+      <form className='search-form' onSubmit={this.handleSubmitForm}>
         <label>
           Ім'я:
           <input
