@@ -5,7 +5,7 @@ import FavouriteList from "./FavouriteList";
 import SortingTab from "./SortingTab";
 import { API_URL, API_KEY } from "../utils/api";
 import Pagination from "./Pagination";
-import SearchForm from "./SearchForm";
+import Header from "./Header/Header";
 class App extends React.Component {
   constructor() {
     super();
@@ -75,22 +75,26 @@ class App extends React.Component {
       localStorage.setItem("movies", JSON.stringify(emptyArr));
     }
   }
+  componentWillMount() {
+    console.log("will mount");
+  }
   componentDidMount() {
     this.getMovies();
+    console.log("did mount");
   }
   componentDidUpdate(prevProps, prevState) {
-    if (
-      prevState.sortBy !== this.state.sortBy ||
-      prevState.page !== this.state.page
-    ) {
+    if (prevState.sortBy !== this.state.sortBy) {
       this.getMovies();
       console.log("did update");
+    }
+    if (prevState.page !== this.state.page) {
+      console.log("in production");
     }
   }
   render() {
     return (
       <div>
-        <SearchForm searchFilm={this.searchFilm} />
+        <Header searchFilm={this.searchFilm} />
         <FavouriteList
           willWatch={this.state.willWatch}
           count={this.state.willWatch.length}

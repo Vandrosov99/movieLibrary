@@ -14,9 +14,15 @@ export default class SearchForm extends Component {
     });
   };
   handleSubmitForm = e => {
-    const searchFilm = this.state.query;
-    if (searchFilm) this.props.searchFilm(this.state.query);
     e.preventDefault();
+
+    const searchFilm = this.state.query;
+    if (searchFilm) {
+      this.props.searchFilm(searchFilm);
+      // this.state.query = "";
+    }
+    this.state.query = "";
+    console.log(e.target.parentChildren);
   };
   render() {
     return (
