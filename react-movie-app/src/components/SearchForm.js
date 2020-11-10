@@ -19,7 +19,6 @@ export default class SearchForm extends Component {
     const searchFilm = this.state.query;
     if (searchFilm) {
       this.props.searchFilm(searchFilm);
-      // this.state.query = "";
     }
     this.state.query = "";
     console.log(e.target.parentChildren);
