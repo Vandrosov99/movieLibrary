@@ -1,0 +1,48 @@
+.movie__item {
+  width: 29%;
+  margin: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.movie__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moovie__img_container {
+  margin-bottom: 10px;
+  height: 100%;
+}
+
+.movie__item_text {
+  color: black;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid yellow;
+  margin-bottom: 5px;
+}
+
+.movie__item_text a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+}
+
+.btnToggle,
+.btnDelete {
+  padding: 10px;
+  transition: all 0.2s ease-in;
+}
+
+.btnDelete:hover {
+  background: red;
+  cursor: pointer;
+}
+
+.btnToggle:hover {
+  cursor: pointer;
+  background: rgb(207, 181, 30);
+}

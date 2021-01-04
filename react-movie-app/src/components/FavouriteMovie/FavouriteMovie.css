@@ -1,0 +1,91 @@
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 18px;
+}
+.deleteTd {
+  width: 65px;
+}
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    /* Label the data */
+    content: attr(data-column);
+
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+.card__delete {
+  position: relative;
+  width: 17px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.card__delete::before {
+  content: "";
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  margin-top: 15px;
+  background-color: #f4a259;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in;
+}
+
+.card__delete::after {
+  content: "";
+  height: 4px;
+  width: 25px;
+  position: absolute;
+  margin-top: 15px;
+  background-color: #f4a259;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all 0.3s ease-in;
+}
+
+.card__delete:hover::before {
+  transform: rotate(-45deg);
+  background-color: #f25c66;
+}
+
+.card__delete:hover::after {
+  transform: rotate(45deg);
+  background-color: #f25c66;
+}

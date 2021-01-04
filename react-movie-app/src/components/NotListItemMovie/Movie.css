@@ -1,0 +1,38 @@
+.movie__img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  padding-bottom: 15px;
+}
+.parentNotMovie {
+  display: flex;
+  flex-direction: column;
+  min-height: 87vh;
+}
+.title {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+}
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.desc {
+  line-height: 1.8;
+  padding-bottom: 10px;
+}
+
+.avgVote {
+  padding-bottom: 10px;
+}
+
+.adult {
+  padding-bottom: 10px;
+}
+
+.originalLanguage {
+  padding-bottom: 10px;
+}

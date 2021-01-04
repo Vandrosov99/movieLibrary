@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./SearchForm.css";
 
 export default class SearchForm extends Component {
   constructor() {
@@ -20,16 +21,18 @@ export default class SearchForm extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmitForm}>
+      <form onSubmit={this.handleSubmitForm} className='submit__form'>
         <label>
-          Ім'я:
+          <span className='submit__text'> Find Out</span>
+
           <input
+            className='submit__input'
             onChange={this.handleChangeInput}
             type='text'
             value={this.state.query}
           />
         </label>
-        <input type='submit' value='Надіслати' />
+        <input class='submit__btn' type='submit' value='SEARCH' />
       </form>
     );
   }

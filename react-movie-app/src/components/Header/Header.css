@@ -1,0 +1,41 @@
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6vh;
+  padding: 5px;
+}
+
+.header {
+  background: rgb(204, 185, 13);
+}
+
+.logo {
+  height: 100%;
+}
+
+.logo img {
+  background: transparent;
+  object-fit: contain;
+  height: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+.logo img:hover {
+  background: red;
+  cursor: pointer;
+}
+
+.favFilmsBtn a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.favFilmsBtn {
+  padding: 15px;
+  font-size: 20px;
+}
+
+.bg-yellow {
+  background: rgb(34, 96, 211);
+}

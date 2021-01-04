@@ -1,0 +1,11 @@
+.counterWatch {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 600;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px 15px;
+}
+.counterContainer {
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+.parentSort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardSort {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 10px 30px;
+  padding: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.cardSort:hover {
+  cursor: pointer;
+}
+
+.active {
+  background: rgb(40, 219, 181);
+}
